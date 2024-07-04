@@ -41,12 +41,12 @@ function calculateSecurity() {
         securityIndicatorBarEl.classList.add("warning");
         securityIndicatorBarEl.classList.remove("critical");
         securityIndicatorBarEl.classList.remove("safe");
-        document.querySelector("#security-indicator-text").innerText="An avarage password"
+        document.querySelector("#security-indicator-text").innerText="Avarage password"
     } else {//Displays safe bar (green)
         securityIndicatorBarEl.classList.add("safe");
         securityIndicatorBarEl.classList.remove("warning");
         securityIndicatorBarEl.classList.remove("critical");
-        document.querySelector("#security-indicator-text").innerText="An safe password"
+        document.querySelector("#security-indicator-text").innerText="Safe password"
     }//Adjusts bar for 100%
     if (percent === 100) {
         securityIndicatorBarEl.classList.add("completed");
