@@ -11,8 +11,8 @@ main {
 }
 
 .hero {
-    text-align: center;
     padding-top: 2rem;
+    text-align: center;
     padding-bottom: 3rem;
 }
 
@@ -112,6 +112,13 @@ main {
     background-color: green;
 }
 
+.securityText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    font-weight: bold;
+}
 .customize {
     padding: 1rem 1.5rem;
 }

@@ -5,7 +5,7 @@ const upperCaseCheckEl = document.querySelector("#uppercase-check");
 const numberCheckEl = document.querySelector("#number-check");
 const securityIndicatorBarEl = document.querySelector("#security-indicator-bar");
 const specialCheckEl = document.querySelector("#special-check");
-function generatePassword() {//Generates a random password
+function generatePassword() {//Generates an random password
     let chars = "abcdefghijklmnpqrstuvwxyz";
     const uppercaseChars = "ABCDEFGHIJKLMNPQRSTUVWXY";
     const numberChars = "1234567890";
@@ -19,7 +19,7 @@ function generatePassword() {//Generates a random password
     if (specialCheckEl.checked) {//If special is checked, adds special characters into chars constant
         chars += specialChars;
     }
-    let password = "";//Sarts an empty password
+    let password = "";//Starts an empty password
     for (let i = 0; i < passwordLength; i++) {
         const randomNumber = Math.floor(Math.random() * chars.length);//Gets a random number based on chars length
         password += chars.substring(randomNumber, randomNumber + 1);//Adds to password a random character from chars
@@ -36,14 +36,17 @@ function calculateSecurity() {
         securityIndicatorBarEl.classList.add("critical");
         securityIndicatorBarEl.classList.remove("warning");
         securityIndicatorBarEl.classList.remove("safe");
+        document.querySelector("#security-indicator-text").innerText="Not an safe password"
     } else if (percent >= 25 && percent <= 60) {//Displays warning bar (yellow)
         securityIndicatorBarEl.classList.add("warning");
         securityIndicatorBarEl.classList.remove("critical");
         securityIndicatorBarEl.classList.remove("safe");
+        document.querySelector("#security-indicator-text").innerText="An avarage password"
     } else {//Displays safe bar (green)
         securityIndicatorBarEl.classList.add("safe");
         securityIndicatorBarEl.classList.remove("warning");
         securityIndicatorBarEl.classList.remove("critical");
+        document.querySelector("#security-indicator-text").innerText="An safe password"
     }//Adjusts bar for 100%
     if (percent === 100) {
         securityIndicatorBarEl.classList.add("completed");
